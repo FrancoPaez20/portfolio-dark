@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+	--blanco: #fff;
+	--negro: #000;
+	font-size: 16px;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	background-color: var(--blanco);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 0px;
+	background: #282828;
+}
+
+.wrap {
+	max-width: 1020px;
+	width: 100%;
+	margin: auto;
+	padding: 0 10px;
+}
+
+.header {
+	width: 100%;
+	height: 64px;
+	background-color: #1b1e1e;
+	display: flex;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	-webkit-box-shadow: 0 2px 10px 0 rgba(255, 255, 255, 0.3);
+	-moz-box-shadow: 0 2px 10px 0 rgba(255, 255, 255, 0.3);
+	box-shadow: 0 2px 10px 0 rgba(255, 255, 255, 0.3);
+	z-index: 2;
+}
+
+.header .wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header .wrap a {
+	color: #fff;
+	font-size: 1rem;
+	padding: 0.5rem 1;
+	border-radius: 4px;
+}
+
+.header .wrap a:hover {
+	border: 1px solid #fff;
+}
+
+.header .wrap .material-icons {
+	display: none;
+}
+
+.hero {
+	width: 100%;
+	min-height: 500px;
+	display: flex;
+	align-items: center;
+	background-color: #313434;
+	background-image: url('../bg3.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero .wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.hero .wrap .hero-data .hero-title {
+	font-size: clamp(2.323rem, 5vmin, 3.815rem);
+	font-weight: 900;
+	color: #fff;
+	letter-spacing: 1px;
+}
+
+.hero .wrap .hero-data .hero-subtitle {
+	font-size: clamp(1.25rem, 5 vmin, 1.953rem);
+	font-weight: 700;
+	color: #fff;
+}
+
+.hero .wrap .hero-data .hero-title span,
+.hero .wrap .hero-data .hero-subtitle span,
+.title span {
+	color: #7510f7;
+}
+
+.hero .wrap .hero-data .hero-button {
+	display: flex;
+	align-items: center;
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	background-color: #7510f7;
+	border: none;
+	color: #fff;
+	font-size: 1rem;
+	margin-top: 1rem;
+}
+
+.hero .wrap .hero-data .hero-button span {
+	margin-left: 1rem;
+}
+
+.hero .wrap .hero-data .hero-button:focus span,
+.hero .wrap .hero-data .hero-button:hover span {
+	transform: rotateX(180deg);
+	transition: 0.5s;
+}
+
+.hero .wrap .hero-image {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+}
+
+.hero .wrap .hero-image img {
+	width: 100%;
+	height: 100%;
+}
+
+.works .works-list,
+.projects .projects-list {
+	display: flex;
+	gap: 50px;
+	scroll-snap-type: x mandatory;
+	overflow-x: auto;
+}
+
+.works .works-list::-webkit-scrollbar,
+.projects .projects-list::-webkit-scrollbar {
+	/* height: 6px; */
+	background-color: transparent;
+}
+
+.works .works-list::-webkit-scrollbar-thumb,
+.projects .projects-list::-webkit-scrollbar-thumb {
+	display: none;
+}
+
+.works .works-list .works-item,
+.projects .projects-list .projects-item {
+	position: relative;
+	scroll-snap-align: center;
+	min-width: 300px; /*PORQUE NO FUNCA EL WIDTH SOLO, SI O SI FUNCIONE CON EL "MIN"*/
+	height: 200px;
+	overflow: hidden;
+	/* border-radius: 0.5rem; NO SE QUE PASA QUE ME SALEN LOS BORDER DE LA IMAGEN Y QUEDA FEO */
+	border-radius: 1rem;
+}
+
+.works .works-list .works-item .works-item-img,
+.projects .projects-list .projects-item .projects-item-img {
+	width: 100%;
+	height: 100%;
+}
+
+.works .works-list .works-item .works-item-img img,
+.projects .projects-list .projects-item .projects-item-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	-o-object-fit: cover;
+	object-position: center;
+	-o-object-position: center;
+}
+
+.works .works-list .works-item .overlay,
+.projects .projects-list .projects-item .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	color: #fff;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: 0.3s;
+	background-color: #141c3a;
+}
+
+.works .works-list .works-item:hover .works-item-img img,
+.projects .projects-list .projects-item:hover .projects-item-img img {
+	transform: scale(1.1);
+	transition: 0.3s;
+}
+
+.works .works-list .works-item:hover .overlay,
+.projects .projects-list .projects-item:hover .overlay {
+	opacity: 1;
+}
+
+.works,
+.projects,
+.skills,
+.goals,
+.hobbies,
+.footer {
+	background-color: #1b1e1e;
+}
+
+.works .wrap,
+.projects .wrap,
+.skills .wrap,
+.goals .wrap,
+.hobbies .wrap {
+	padding: 70px 10px;
+}
+
+.works .wrap .title,
+.projects .wrap .title,
+.skills .wrap .title,
+.goals .wrap .title,
+.hobbies .wrap .title {
+	font-size: clamp(2.25rem, 6vmin, 3.052rem);
+	font-weight: 800;
+	color: #fff;
+	margin-bottom: 50px;
+}
+
+.skills .wrap .skills-list,
+.goals .wrap .goals-list,
+.hobbies .wrap .hobbies-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 50px;
+	cursor: default;
+}
+
+.skills .wrap .skills-list .skill,
+.goals .wrap .goals-list .goal,
+.hobbies .wrap .hobbies-list .hobbie {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 2rem;
+	border-radius: 50px;
+	background-color: rgba(117, 16, 247, 0.2);
+	border: 1px solid #7510f7;
+}
+
+.skills .wrap .skills-list .skill i,
+.goals .wrap .goals-list .goal i,
+.hobbies .wrap .hobbies-list .hobbie i {
+	color: #fff;
+	margin-right: 1rem;
+	font-size: 1.2rem;
+}
+
+.skills .wrap .skills-list .skill p,
+.goals .wrap .goals-list .goal p,
+.hobbies .wrap .hobbies-list .hobbie p {
+	color: #fff;
+	font-size: 1.1rem;
+}
+
+.footer {
+	min-height: 100px;
+	background-color: #212429;
+}
+
+.footer .wrap {
+	min-height: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 50px;
+	padding: 1rem 10px;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.5rem;
+	color: #fff;
+}
+
+.footer .wrap svg {
+	width: 35px;
+	height: 35px;
+	fill: #fff;
+}
+
+.footer .wrap i,
+.footer .wrap svg {
+	transition: 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.footer .wrap i:hover,
+.footer .wrap svg:hover {
+	transform: translateY(-10px);
+	color: #9e5af9;
+	fill: #9e5af9;
+}
+
+.footer .wrap svg circle {
+	fill: rgba(255, 255, 255, 0.5);
+	border: 1px solid #000;
+}
+
+.footer .wrap svg rect {
+	border: 1px solid #000;
+}
+
+@media screen and (max-width: 786px) {
+	.header .wrap a {
+		display: none;
+	}
+
+	.header .wrap .material-icons {
+		display: block;
+		color: #fff;
+	}
+
+	.hero {
+		padding: 1rem 0;
+	}
+
+	.hero .wrap {
+		flex-direction: column;
+	}
+
+	.hero .wrap .hero-data {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.hero .wrap .hero-image {
+		margin-top: 20px;
+		order: -1;
+	}
+
+	.hero .wrap .hero-data .hero-button {
+		border: 1px solid;
+		margin-top: 1rem;
+	}
+
+	.works .wrap,
+	.projects .wrap,
+	.skills .wrap,
+	.goals .wrap,
+	.hobbies .wrap {
+		padding: 40px 10px;
+	}
+
+	.skills .wrap .skills-list .skill i,
+	.goals .wrap .goals-list .goal i,
+	.hobbies .wrap .hobbies-list .hobbie i {
+		font-size: 1rem;
+	}
+
+	.skills .wrap .skills-list .skill p,
+	.goals .wrap .goals-list .goal p,
+	.hobbies .wrap .hobbies-list .hobbie p {
+		font-size: 1rem;
+	}
+
+	.skills .wrap .skills-list,
+	.goals .wrap .goals-list,
+	.hobbies .wrap .hobbies-list {
+		gap: 20px;
+	}
+}
