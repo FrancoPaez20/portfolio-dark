@@ -1,32 +1,157 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/* ===================================================
+   VARIABLES GLOBALES + THEMING
+=================================================== */
 :root {
-	--negro: #000;
-	--black: #282828;
-	--blanco: #fff;
-	--rosado: #d90a6c;
-	--morado: #7510f7;
-	font-size: 16px;
+  /* Paleta base */
+  --negro: #000;
+  --black: #181818;
+  --blanco: #fff;
+  --rosado: #d90a6c;
+  --morado: #7510f7;
+
+  /* Diseño y consistencia */
+  --radius: 12px;
+  --transition: 0.25s ease;
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, .18);
+  --shadow-strong: 0 10px 30px rgba(0, 0, 0, .28);
+
+  /* Acentos */
+  --accent: #8b5cf6;
+  --accent-hover: #9b6ef9;
+  --accent-light: rgba(139, 92, 246, 0.18);
+  --glow-accent: 0 0 10px rgba(139, 92, 246, 0.38);
+
+  /* Tema oscuro por defecto */
+  --bg-color: #0e0e10;
+  --text-color: #f5f5f5;
+  --bg-surface: rgba(255, 255, 255, 0.06);
+  --border-color: rgba(255, 255, 255, 0.16);
+  --bg-medium: #1b1e1e;
+  --header-bg: rgba(14, 14, 16, 0.9);
+  --sidebar-bg: rgba(10, 10, 14, 0.96);
+  --footer-bg: #212429;
 }
 
+/* Tema claro */
+[data-theme="light"] {
+  --bg-color: #f8f8fb;
+  --text-color: #121316;
+  --bg-surface: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.12);
+  --bg-medium: #f1f2f5;
+  --header-bg: rgba(252, 252, 253, 0.85);
+  --sidebar-bg: rgba(252, 252, 253, 0.96);
+  --footer-bg: #eceef2;
+  --accent-light: rgba(139, 92, 246, 0.14);
+}
+
+/* ===================================================
+   RESETEOS GENERALES
+=================================================== */
 * {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	text-decoration: none;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	scroll-behavior: smooth;
-	font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* ===================================================
+   UTILIDADES Y ELEMENTOS BASE
+=================================================== */
+.wrap {
+  max-width: 1020px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Links */
+a {
+  color: inherit;
+  transition: color var(--transition);
+}
+a:hover {
+  color: var(--accent);
+}
+
+/* Botones */
+button {
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Imágenes */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
-	width: 6px;
-	background-color: var(--blanco);
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
 }
 
-::-webkit-scrollbar-thumb {
-	border-radius: 0px;
-	background: #282828;
+/* ===================================================
+   TEXTOS Y MARCA PERSONAL
+=================================================== */
+.text-center {
+  text-align: center;
+}
+
+/* Punto morado distintivo */
+.dot {
+  color: var(--accent);
+}
+
+/* Alternativa automática:
+   agregar clase .with-dot a cualquier título/subtítulo
+   para añadir el punto violeta sin tocar el HTML */
+.with-dot::after {
+  content: ".";
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+/* ===================================================
+   TRANSICIONES Y EFECTOS GENERALES
+=================================================== */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+[data-reveal].visible {
+  opacity: 1;
+  transform: none;
 }

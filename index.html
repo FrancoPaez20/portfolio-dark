@@ -1,304 +1,374 @@
 <!DOCTYPE html>
-<html lang='es'>
+<html lang="en">
 
 <head>
-	<meta http-equiv='Expires' content='0'>
-	<meta http-equiv='Pragma' content='no-cache'>
-	<meta http-equiv='Cache-Control' content='no-cache'>
-	<meta name='subject' content='your website' s subject'>
-	<meta name='language' content='ES'>
-	<meta name='robots' content='index,follow' />
-	<meta name='revised' content='Sunday, July 18th, 2010, 5:15 pm' />
-	<meta name='abstract' content=''>
-	<meta name='topic' content=''>
-	<meta name='summary' content=''>
-	<meta name='designer' content=''>
-	<meta name='reply-to' content='email@hotmail.com'>
-	<meta name='owner' content=''>
-	<meta name='url' content='http://www.websiteaddrress.com'>
-	<meta name='identifier-URL' content='http://www.websiteaddress.com'>
-	<meta name='directory' content='submission'>
-	<meta name='category' content=''>
-	<meta name='coverage' content='Worldwide'>
-	<meta name='distribution' content='Global'>
-	<meta name='rating' content='General'>
-	<meta name='author' content='Franco Paez, email@hotmail.com'>
-	<meta name='revisit-after' content='7 days'>
-	<meta name='Classification' content='Business'>
-	<meta name='keywords' content='' />
-	<meta name='description'
-		content='Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, nulla itaque, odio qui nobis officia quas harum odit pariatur dolore porro illo corporis blanditiis reprehenderit iure impedit dignissimos libero velit!' />
-	<meta name='copyright' content='Franco Paez'>
-	<!-- <meta name='viewport' content='width=device-width, initial-scale=1'> -->
-	<meta name='viewport'
-		content='width=device-width, initial-scale=1, maximum-scale=1, minimun-scale=1, user-scalable=no'>
-	<meta charset=' UTF-8'>
-	<meta name='theme-color' content='#181818'>
-	<title>Franco Nahuel Paez</title>
-	<script src='https://kit.fontawesome.com/fc69885e8b.js' crossorigin='anonymous'></script>
-	<link rel='icon' type='image/png' sizes='32x32' href='./images/favicon-32x32.png'>
-	<link rel='stylesheet'
-		href='https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Two+Tone|Material+Icons+Sharp'>
-	<link rel='stylesheet' href='./css/style.css'>
-	<link rel='stylesheet' href='./css/index.css'>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Franco Nahuel Paez</title>
+
+  <meta name="theme-color" content="#181818" />
+  <meta name="color-scheme" content="dark light" />
+
+  <!-- Tema inicial sin FOUC -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (!saved) {
+          var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+          saved = prefersLight ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', saved);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- Iconos Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/index.css" />
 </head>
 
 <body>
-	<header id="header" class="header">
-		<nav class="wrap">
-			<span class="material-icons">menu</span>
-			<a href="#" class="header-links">Inicio</a>
-			<a href="#Works" class="header-links">Trabajos</a>
-			<a href="#Projects" class="header-links">Proyectos</a>
-			<a href="#Skills" class="header-links">Skills</a>
-			<a href="#Goals" class="header-links">Próximamente</a>
-			<a href="#Hobbies" class="header-links">Hobbies</a>
-			<!-- <a href="#Estudios" class="header-links">Estudios</a> -->
-		</nav>
-	</header>
+  <header class="header">
+    <nav class="wrap">
+      <button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+        <i data-lucide="menu"></i>
+      </button>
 
-	<section id="hero" class="hero">
-		<div class="wrap">
-			<div class="hero-data">
-				<h1 class="hero-title">Franco Paez<span>.</span></h1>
-				<h2 class="hero-subtitle">Frontend Developer<span>.</span></h2>
-				<a href="contact.html" class="hero-button">¡Contáctame!<span class="material-icons">send</span></a>
-			</div>
-			<figure class="hero-image">
-				<img src="./img/yo.png" alt="Foto de perfil de Franco Nahuel Paez echa con los animojis de Apple.">
-			</figure>
-		</div>
-	</section>
+      <div class="nav-links">
+        <a href="#" data-i18n="nav.home" data-i18n-attr="title: nav.home, aria-label: nav.home" title="Home"
+          aria-label="Home">Home</a>
 
-	<section id="Works" class="works">
-		<div class="wrap">
-			<h2 class="title works-title">Mis Trabajos<span>.</span></h2>
-			<div class="works-list">
-				<div class="item works-item">
-					<figure class="works-item-img">
-						<img src="https://wallpaperaccess.com/full/218120.jpg" alt="">
-					</figure>
-					<div class="overlay">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 1.</p>
-					</div>
-				</div>
-				<div class="item works-item">
-					<figure class="works-item-img">
-						<img src="https://images7.alphacoders.com/331/331090.jpg" alt="">
-					</figure>
-					<div class="overlay">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 2.</p>
-					</div>
-				</div>
-				<div class="item works-item">
-					<figure class="works-item-img">
-						<img src="https://images5.alphacoders.com/103/1038573.jpg" alt="">
-					</figure>
-					<div class="overlay">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 3.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <a href="#Works" data-i18n="nav.works" data-i18n-attr="title: nav.works, aria-label: nav.works" title="Works"
+          aria-label="Works">Works</a>
 
-	<section id="Projects" class="projects">
-		<div class="wrap">
-			<h2 class="title projects-title">Mis Proyectos<span>.</span></h2>
-			<div class="projects-list">
-				<div class="item projects-item">
-					<figure class="projects-item-img">
-						<img src="https://wallpaperaccess.com/full/218120.jpg" alt="">
-					</figure>
-					<div class="overlay">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 1.</p>
-					</div>
-				</div>
-				<div class="item projects-item">
-					<figure class="projects-item-img">
-						<img src="https://images7.alphacoders.com/331/331090.jpg" alt="">
-					</figure>
-					<div class="overlay">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 2.</p>
-					</div>
-				</div>
-				<div class="item projects-item">
-					<figure class="projects-item-img">
-						<img src="https://images5.alphacoders.com/103/1038573.jpg" alt="">
-					</figure>
-					<div class="overlay">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 3.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <a href="#Projects" data-i18n="nav.projects" data-i18n-attr="title: nav.projects, aria-label: nav.projects"
+          title="Projects" aria-label="Projects">Projects</a>
 
-	<section id="Skills" class="skills">
-		<div class="wrap">
-			<h2 class="title skills-title">Mis Habilidades<span>.</span></h2>
-			<div class="skills-list">
-				<div class="skill">
-					<i class="fab fa-html5"></i>
-					<p>HTML</p>
-				</div>
-				<div class="skill">
-					<i class="fab fa-css3-alt"></i>
-					<p>CSS</p>
-				</div>
-				<div class="skill">
-					<i class="fab fa-js-square"></i>
-					<p>JavaScript</p>
-				</div>
-				<div class="skill">
-					<i class="fas fa-mobile-alt"></i>
-					<p>Responsive Design</p>
-				</div>
-				<div class="skill">
-					<i class="fab fa-git-alt"></i>
-					<p>GIT</p>
-				</div>
-				<div class="skill">
-					<i class="fab fa-github"></i>
-					<p>GitHub</p>
-				</div>
-				<div class="skill">
-					<i class="fas fa-paw"></i>
-					<p>Pug</p>
-				</div>
-				<div class="skill">
-					<i class="fab fa-sass"></i>
-					<p>Sass</p>
-				</div>
-				<div class="skill">
-					<i class="fab fa-less"></i>
-					<p>Less</p>
-				</div>
-				<div class="skill">
-					<i class="fab fa-css3"></i>
-					<p>Stylus</p>
-				</div>
-				<div class="skill">
-					<i class="fas fa-pen-nib"></i>
-					<p>Adobe XD</p>
-				</div>
-				<div class="skill">
-					<i class="fas fa-paint-brush"></i>
-					<p>Adobe Photoshop</p>
-				</div>
-				<div class="skill">
-					<i class="fas fa-video"></i>
-					<p>Adobe Premiere Pro</p>
-				</div>
-			</div>
-		</div>
-	</section>
+        <a href="#Skills" data-i18n="nav.skills" data-i18n-attr="title: nav.skills, aria-label: nav.skills"
+          title="Skills" aria-label="Skills">Skills</a>
 
-	<section id="Goals" class="goals">
-		<div class="wrap">
-			<h2 class="title goals-title">Próximamente<span>.</span></h2>
-			<div class="goals-list">
-				<div class="goal">
-					<i class="fab fa-react"></i>
-					<p>React.Js</p>
-				</div>
-				<div class="goal">
-					<i class="fas fa-globe-americas"></i>
-					<p>Mejorar mi Ingles</p>
-				</div>
-				<div class="goal">
-					<i class="fas fa-globe-africa"></i>
-					<p>Aleman</p>
-				</div>
-				<div class="goal">
-					<i class="fas fa-camera"></i>
-					<p>Fotografia</p>
-				</div>
-				<div class="goal">
-					<i class="fas fa-gamepad"></i>
-					<p>Desarrollo de Videojuegos</p>
-				</div>
-				<div class="goal">
-					<i class="fas fa-palette"></i>
-					<p>Arte Digital</p>
-				</div>
-				<div class="goal">
-					<i class="fas fa-paint-brush"></i>
-					<p>Ilustracion Digital</p>
-				</div>
-				<div class="goal">
-					<i class="fas fa-cube"></i>
-					<p>Modelacion 3D</p>
-				</div>
-				<div class="goal">
-					<i class="fas fa-compact-disc"></i>
-					<p>Produccion Musical</p>
-				</div>
-				<div class="goal">
-					<i class="fas fa-hammer"></i>
-					<p>Carpinteria</p>
-				</div>
-				<div class="goal">
-					<i class="fas fa-bolt"></i>
-					<p>Electronica</p>
-				</div>
-			</div>
-		</div>
-	</section>
+        <a href="#Goals" data-i18n="nav.goals" data-i18n-attr="title: nav.goals, aria-label: nav.goals" title="Next"
+          aria-label="Next">Next</a>
 
-	<section id="Hobbies" class="hobbies">
-		<div class="wrap">
-			<h2 class="title hobbies-title">Mis Hobbies<span>.</span></h2>
-			<div class="hobbies-list">
-				<div class="hobbie">
-					<i class="fas fa-desktop"></i>
-					<p>Programar</p>
-				</div>
-				<div class="hobbie">
-					<i class="fas fa-dumbbell"></i>
-					<p>GYM</p>
-				</div>
-				<div class="hobbie">
-					<i class="fas fa-palette"></i>
-					<p>Dibujar</p>
-				</div>
-				<div class="hobbie">
-					<i class="fas fa-film"></i>
-					<p>Edicion de video</p>
-				</div>
-				<div class="hobbie">
-					<i class="fas fa-pencil-ruler"></i>
-					<p>Edicion de imagen</p>
-				</div>
-				<div class="hobbie">
-					<i class="fas fa-egg"></i>
-					<p>Cocinar</p>
-				</div>
-			</div>
-		</div>
-	</section>
+        <a href="#Hobbies" data-i18n="nav.hobbies" data-i18n-attr="title: nav.hobbies, aria-label: nav.hobbies"
+          title="Hobbies" aria-label="Hobbies">Hobbies</a>
+      </div>
 
-	<footer id="Footer" class="footer">
-		<nav class="wrap">
-			<a target="_blank" href="https://twitter.com/FrancoNPaez20"><i class="fab fa-twitter"></i></a>
-			<a target="_blank" href="https://www.instagram.com/francopaez20/"><i class="fab fa-instagram"></i></a>
-			<a target="_blank" href="https://www.linkedin.com/in/franconpaez20/"><i class="fab fa-linkedin-in"></i></a>
-			<!-- <a target="_blank" href="https://www.reddit.com/user/FrancoPaez20"><i class="fab fa-reddit"></i></a> -->
-			<!-- <a target="_blank" href="https://www.twitch.tv/francopaez20"><i class="fab fa-twitch"></i></a> -->
-			<a target="_blank" href="https://github.com/FrancoPaez20"><i class="fab fa-github"></i></a>
-			<a target="_blank" href="https://codepen.io/FrancoPaez20"><i class="fab fa-codepen"></i></a>
-			<a target="_blank" href="https://collectednotes.com/francopaez20">
-				<svg viewBox="0 0 346 282" alt="Collected Notes">
-					<g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
-						<circle id="Oval" fill-opacity="0.95" cx="129.5" cy="155.5" r="93.5" width="150" height="150">
-						</circle>
-						<rect id="Rectangle" fill-opacity="0.95" x="146" y="42" width="150" height="150" rx="25"></rect>
-					</g>
-				</svg>
-			</a>
-		</nav>
-	</footer>
+      <div class="header-controls">
+        <select id="lang-switcher" aria-label="Language selector">
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="pt">PT</option>
+        </select>
 
+        <button id="theme-toggle" aria-pressed="false" aria-label="Toggle theme" title="Toggle theme">
+          <i data-lucide="sun"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="sidebar" id="mobile-menu" aria-hidden="true" inert>
+    <div class="sidebar-content">
+      <button class="sidebar-close" aria-label="Close menu" title="Close menu">
+        <i data-lucide="x"></i>
+      </button>
+
+      <a href="#" data-i18n="nav.home" data-i18n-attr="title: nav.home, aria-label: nav.home" title="Home"
+        aria-label="Home">Home</a>
+
+      <a href="#Works" data-i18n="nav.works" data-i18n-attr="title: nav.works, aria-label: nav.works" title="Works"
+        aria-label="Works">Works</a>
+
+      <a href="#Projects" data-i18n="nav.projects" data-i18n-attr="title: nav.projects, aria-label: nav.projects"
+        title="Projects" aria-label="Projects">Projects</a>
+
+      <a href="#Skills" data-i18n="nav.skills" data-i18n-attr="title: nav.skills, aria-label: nav.skills" title="Skills"
+        aria-label="Skills">Skills</a>
+
+      <a href="#Goals" data-i18n="nav.goals" data-i18n-attr="title: nav.goals, aria-label: nav.goals" title="Next"
+        aria-label="Next">Next</a>
+
+      <a href="#Hobbies" data-i18n="nav.hobbies" data-i18n-attr="title: nav.hobbies, aria-label: nav.hobbies"
+        title="Hobbies" aria-label="Hobbies">Hobbies</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-data" data-reveal="up" data-reveal-delay="100">
+          <h1 class="hero-title">
+            Franco Paez<span class="dot">.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            <span data-i18n="hero.subtitle">Frontend Developer</span><span class="dot">.</span>
+          </p>
+
+          <a href="./assets/FrancoPaez-cv.pdf" class="hero-button" download
+            data-i18n-attr="title: hero.download, aria-label: hero.download" title="Download CV"
+            aria-label="Download CV">
+            <i data-lucide="download"></i>
+            <span data-i18n="hero.download">Download CV</span>
+          </a>
+        </div>
+
+        <figure class="hero-image" data-reveal="left" data-reveal-delay="160" aria-hidden="true">
+          <img src="./img/yo.png" alt="Portrait of Franco Nahuel Paez" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="Works" class="works">
+      <div class="wrap">
+        <h2 class="title" data-reveal="up">
+          <span data-i18n="nav.works">Works</span><span class="dot">.</span>
+        </h2>
+
+        <div class="works-list" data-reveal="up" data-reveal-delay="80">
+          <article class="works-item">
+            <img src="https://wallpaperaccess.com/full/218120.jpg" alt="">
+            <div class="overlay">
+              <p><span data-i18n="works.item1">Professional and adaptable web design.</span><span class="dot">.</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="works-item">
+            <img src="https://images7.alphacoders.com/331/331090.jpg" alt="">
+            <div class="overlay">
+              <p><span data-i18n="works.item2">Interface development focused on UX/UI.</span><span class="dot">.</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="works-item">
+            <img src="https://images5.alphacoders.com/103/1038573.jpg" alt="">
+            <div class="overlay">
+              <p><span data-i18n="works.item3">Creative projects with modern technologies.</span><span
+                  class="dot">.</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="Projects" class="projects">
+      <div class="wrap">
+        <h2 class="title" data-reveal="up">
+          <span data-i18n="nav.projects">Projects</span><span class="dot">.</span>
+        </h2>
+
+        <div class="projects-list" data-reveal="up" data-reveal-delay="80">
+          <article class="projects-item">
+            <img src="https://wallpaperaccess.com/full/218120.jpg" alt="">
+            <div class="overlay">
+              <p><span data-i18n="projects.item1">Experimental React-based project.</span><span class="dot">.</span></p>
+            </div>
+          </article>
+
+          <article class="projects-item">
+            <img src="https://images7.alphacoders.com/331/331090.jpg" alt="">
+            <div class="overlay">
+              <p><span data-i18n="projects.item2">API and microservice integration.</span><span class="dot">.</span></p>
+            </div>
+          </article>
+
+          <article class="projects-item">
+            <img src="https://images5.alphacoders.com/103/1038573.jpg" alt="">
+            <div class="overlay">
+              <p><span data-i18n="projects.item3">Adaptive and mobile-optimized design.</span><span class="dot">.</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="Skills" class="skills">
+      <div class="wrap">
+        <h2 class="title" data-reveal="up">
+          <span data-i18n="skills.title">My Skills</span><span class="dot">.</span>
+        </h2>
+
+        <div class="skills-list" data-reveal="up" data-reveal-delay="80">
+          <div class="skill"><i data-lucide="code"></i>
+            <p data-i18n="skills.html">Semantic HTML5</p>
+          </div>
+          <div class="skill"><i data-lucide="file-code"></i>
+            <p data-i18n="skills.css">CSS3 / Flexbox / Grid</p>
+          </div>
+          <div class="skill"><i data-lucide="smartphone"></i>
+            <p data-i18n="skills.responsive">Responsive Design (mobile-first)</p>
+          </div>
+          <div class="skill"><i data-lucide="square-terminal"></i>
+            <p data-i18n="skills.js">JavaScript (ES6+)</p>
+          </div>
+          <div class="skill"><i data-lucide="binary"></i>
+            <p data-i18n="skills.dom">DOM Manipulation</p>
+          </div>
+          <div class="skill"><i data-lucide="cloud"></i>
+            <p data-i18n="skills.rest">Fetch / REST APIs</p>
+          </div>
+          <div class="skill"><i data-lucide="braces"></i>
+            <p data-i18n="skills.json">JSON</p>
+          </div>
+
+          <div class="skill"><i data-lucide="accessibility"></i>
+            <p data-i18n="skills.a11y">Accessibility (A11y / WCAG)</p>
+          </div>
+          <div class="skill"><i data-lucide="search"></i>
+            <p data-i18n="skills.seo">Technical SEO (basics)</p>
+          </div>
+
+          <div class="skill"><i data-lucide="atom"></i>
+            <p data-i18n="skills.react">React.js (Hooks, Context)</p>
+          </div>
+          <div class="skill"><i data-lucide="server"></i>
+            <p data-i18n="skills.next">Next.js (SSR / SSG)</p>
+          </div>
+          <div class="skill"><i data-lucide="layers"></i>
+            <p data-i18n="skills.tailwind">Tailwind CSS</p>
+          </div>
+
+          <div class="skill"><i data-lucide="figma"></i>
+            <p data-i18n="skills.design">Figma / XD / Photoshop</p>
+          </div>
+          <div class="skill"><i data-lucide="git-branch"></i>
+            <p data-i18n="skills.git">Git / GitHub</p>
+          </div>
+          <div class="skill"><i data-lucide="cpu"></i>
+            <p data-i18n="skills.tools">Tooling (Vite, ESLint, etc.)</p>
+          </div>
+          <div class="skill"><i data-lucide="kanban-square"></i>
+            <p data-i18n="skills.pm">Jira / Notion / Trello</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="Goals" class="goals">
+      <div class="wrap">
+        <h2 class="title" data-reveal="up">
+          <span data-i18n="goals.title">Next Goals</span><span class="dot">.</span>
+        </h2>
+
+        <div class="goals-list" data-reveal="up" data-reveal-delay="80">
+          <div class="goal"><i data-lucide="box"></i>
+            <p data-i18n="goals.docker">Basic</p>
+          </div>
+          <div class="goal"><i data-lucide="git-commit"></i>
+            <p data-i18n="goals.cicd">CI/CD (GitHub Actions / Vercel / Netlify)</p>
+          </div>
+          <div class="goal"><i data-lucide="test-tube"></i>
+            <p data-i18n="goals.testing">Testing (Jest / RTL / Cypress / Playwright)</p>
+          </div>
+          <div class="goal"><i data-lucide="layout"></i>
+            <p data-i18n="goals.micro">Microfrontends</p>
+          </div>
+          <div class="goal"><i data-lucide="globe"></i>
+            <p data-i18n="goals.english">Intermediate / advanced English</p>
+          </div>
+          <div class="goal"><i data-lucide="camera"></i>
+            <p data-i18n="goals.motion">Motion Design</p>
+          </div>
+          <div class="goal"><i data-lucide="type"></i>
+            <p data-i18n="goals.ts">TypeScript</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="Hobbies" class="hobbies">
+      <div class="wrap">
+        <h2 class="title" data-reveal="up">
+          <span data-i18n="hobbies.title">My Hobbies</span><span class="dot">.</span>
+        </h2>
+        <div class="hobbies-list" data-reveal="up" data-reveal-delay="80">
+          <div class="hobbie"><i data-lucide="code-2"></i>
+            <p data-i18n="hobbies.code">Personal coding projects</p>
+          </div>
+          <div class="hobbie"><i data-lucide="palette"></i>
+            <p data-i18n="hobbies.design">Digital design</p>
+          </div>
+          <div class="hobbie"><i data-lucide="clapperboard"></i>
+            <p data-i18n="hobbies.video">Video editing</p>
+          </div>
+          <div class="hobbie"><i data-lucide="camera"></i>
+            <p data-i18n="hobbies.photo">Photography & editing</p>
+          </div>
+          <div class="hobbie"><i data-lucide="headphones"></i>
+            <p data-i18n="hobbies.dj">DJ (Virtual DJ)</p>
+          </div>
+          <div class="hobbie"><i data-lucide="brush"></i>
+            <p data-i18n="hobbies.art">Digital art</p>
+          </div>
+          <div class="hobbie"><i data-lucide="chef-hat"></i>
+            <p data-i18n="hobbies.cook">Creative cooking</p>
+          </div>
+          <div class="hobbie"><i data-lucide="cookie"></i>
+            <p data-i18n="hobbies.bake">Baking</p>
+          </div>
+          <div class="hobbie"><i data-lucide="dumbbell"></i>
+            <p data-i18n="hobbies.gym">Gym</p>
+          </div>
+          <div class="hobbie"><i data-lucide="globe-2"></i>
+            <p data-i18n="hobbies.travel">Travel & new cultures</p>
+          </div>
+          <div class="hobbie"><i data-lucide="gamepad-2"></i>
+            <p data-i18n="hobbies.gaming">Gaming</p>
+          </div>
+          <div class="hobbie"><i data-lucide="film"></i>
+            <p data-i18n="hobbies.cinema">Movies/series/visual analysis</p>
+          </div>
+          <div class="hobbie"><i data-lucide="book-open"></i>
+            <p data-i18n="hobbies.learn">Continuous learning</p>
+          </div>
+          <div class="hobbie"><i data-lucide="fingerprint"></i>
+            <p data-i18n="hobbies.detective">Solving criminal cases</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <nav class="wrap">
+      <a href="https://twitter.com/FrancoNPaez20" target="_blank" title="Twitter" aria-label="Twitter">
+        <i data-lucide="twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/francopaez20/" target="_blank" title="Instagram" aria-label="Instagram">
+        <i data-lucide="instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/franconpaez20/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+        <i data-lucide="linkedin"></i>
+      </a>
+      <a href="https://github.com/FrancoPaez20" target="_blank" title="GitHub" aria-label="GitHub">
+        <i data-lucide="github"></i>
+      </a>
+      <a href="https://codepen.io/FrancoPaez20" target="_blank" title="CodePen" aria-label="CodePen">
+        <i data-lucide="codepen"></i>
+      </a>
+      <a href="https://collectednotes.com/francopaez20" target="_blank" title="Collected Notes"
+        aria-label="Collected Notes">
+        <i data-lucide="book-open"></i>
+      </a>
+    </nav>
+  </footer>
+
+  <script src="./js/lang.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="./js/theme.js"></script>
+  <script src="./js/reveal.js"></script>
+  <script>lucide.createIcons();</script>
 </body>
 
 </html>
